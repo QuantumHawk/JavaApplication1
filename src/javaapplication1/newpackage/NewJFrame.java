@@ -161,12 +161,12 @@ public class NewJFrame extends javax.swing.JFrame {
                     {
                         if ((magic[i][j] - 1) < _line.length())
                         {
-                            _line = magic[i][j] - 1;
+                            _line = magic[i][j] - 1;      //java не понимает, что здесь происходит) по идее поэлементное считывание строки, замена цифр буквами
                             _cryptedString += _line[magic[i][j]- 1];
                         } 
                         else
                         {
-                            char _randomChar = _randomLine[_rand.Next(0, _randomLine.Length - 1)];
+                            char _randomChar = _randomLine[_rand.Next(0, _randomLine.Length - 1)];// а здесь, если стоит пробел, или элементов не хватает до полного заполнения матрицы буквами, ставится любая из алфавита
                             Console.Write(_randomChar + "\t");
                             _cryptedString += _randomChar;
                         }
